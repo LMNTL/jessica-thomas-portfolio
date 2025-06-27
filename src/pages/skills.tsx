@@ -45,7 +45,7 @@ export default function Skills() {
             <DefaultWordRenderer
               data={data}
               textStyle={{
-                fontFamily: "--font-geist-sans",
+                fontFamily: "Trebuchet MS",
                 WebkitTextStroke: "2px white",
                 cursor: "pointer",
               }}

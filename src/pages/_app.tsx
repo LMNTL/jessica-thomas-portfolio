@@ -3,19 +3,8 @@
 import { Header } from "@/components/ui/header"; // Adjust path if needed (e.g., relative to pages/)
 import { AnimatePresence, motion } from "framer-motion"; // For transitions
 import "@/styles/globals.scss"; // Global styles from original layout.tsx (adjust path)
-import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
 import { AppProps } from "next/app";
-
-// Apply fonts (similar to original layout.tsx)
-export const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-export const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   // const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Head>
         <title>Portfolio</title>
       </Head>
-      <div className={`${geistSans.variable} ${geistMono.variable}`}>
+      <div>
         {" "}
         {/* Apply fonts */}
         <Header /> {/* From template.tsx */}
