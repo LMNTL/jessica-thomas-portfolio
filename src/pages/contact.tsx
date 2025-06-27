@@ -14,7 +14,7 @@ export default function Contact() {
 
   useEffect(() => {
     emailjs.init({
-      publicKey: "ew5x22LOfnmkr4RLf",
+      publicKey: process.env.NEXT_PUBLIC_EMAILJS_KEY,
       blockHeadless: true,
       limitRate: {
         id: "app",
