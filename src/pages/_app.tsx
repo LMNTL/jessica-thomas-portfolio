@@ -5,10 +5,10 @@ import { AnimatePresence, motion } from "framer-motion"; // For transitions
 import "@/styles/globals.scss"; // Global styles from original layout.tsx (adjust path)
 import Head from "next/head";
 import { AppProps } from "next/app";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   // const [isLoading, setIsLoading] = useState(false);
-  // const nextRouter = useRouter();
 
   // // Handle route change events for loading (adapted from template.tsx)
   // useEffect(() => {
@@ -26,6 +26,28 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   //   };
   // }, [nextRouter]);
 
+  useEffect(() => {
+    const routeChange = () => {
+      // Temporary fix to avoid flash of unstyled content
+      // during route transitions. Keep an eye on this
+      // issue and remove this code when resolved:
+      // https://github.com/vercel/next.js/issues/17464
+
+      const tempFix = () => {
+        const allStyleElems = document.querySelectorAll('style[media="x"]');
+        allStyleElems.forEach((elem) => {
+          elem.removeAttribute("media");
+        });
+      };
+      tempFix();
+    };
+
+    router.push(router.pathname);
+    router.events.on("beforeHistoryChange", routeChange);
+    router.events.on("routeChangeComplete", routeChange);
+    router.events.on("routeChangeStart", routeChange);
+  }, []);
+
   return (
     <>
       <Head>
@@ -33,8 +55,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <div>
         {" "}
-        {/* Apply fonts */}
-        <Header /> {/* From template.tsx */}
+        <Header />
         <AnimatePresence mode="wait">
           <motion.div
             key={router.route}
@@ -44,7 +65,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             transition={{ type: "spring", duration: 0.5 }}
             style={{ width: "100%" }}
           >
-            <Component {...pageProps} /> {/* Render the page */}
+            <Component {...pageProps} key={router.route} />{" "}
           </motion.div>
         </AnimatePresence>
       </div>
