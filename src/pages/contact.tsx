@@ -58,9 +58,11 @@ export default function Contact() {
     <>
       {" "}
       <Head>
-        <title>Contact - Portfolio</title> {/* Custom title for this page */}{" "}
-        <meta name="description" content="Get in touch via the contact form." />{" "}
-        {/* Optional, based on context */}{" "}
+        <title>Contact - Portfolio</title>{" "}
+        <meta
+          name="description"
+          content="Get in touch via the contact form."
+        />{" "}
       </Head>
       <div className={styles.container}>
         <div

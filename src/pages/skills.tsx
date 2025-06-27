@@ -41,9 +41,10 @@ export default function Skills() {
           // @ts-expect-error Works!
           fill={(word) => word.color}
           rotate={() => 0 /*Math.random() * 5 - 2.5*/}
-          renderWord={(data) => (
+          renderWord={(data, ref) => (
             <DefaultWordRenderer
               data={data}
+              ref={ref}
               textStyle={{
                 fontFamily: "Trebuchet MS",
                 WebkitTextStroke: "2px white",

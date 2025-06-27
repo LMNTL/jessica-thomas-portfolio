@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Portfolio</title> {/* From original metadata */}
+        <title>Portfolio</title>
         <meta
           name="description"
           content="A portfolio for a pretty dang good software engineer."
