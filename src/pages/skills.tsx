@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 
 interface Skill extends Word {
   description?: string | ReactNode;
-  color?: CSSProperties["color"];
+  color: CSSProperties["color"];
 }
 
 const skillList: Skill[] = [
@@ -16,7 +16,6 @@ const skillList: Skill[] = [
     text: "JavaScript",
     value: 1000,
     color: "#417e38",
-    description: "hahahaha",
   },
   { text: "React", value: 1000, color: "#58c4dc" },
   { text: "TypeScript", value: 1000, color: "#3178c6" },
@@ -39,6 +38,7 @@ export default function Skills() {
           height={200}
           fontWeight={700}
           padding={5}
+          // @ts-expect-error Works!
           fill={(word) => word.color}
           rotate={() => 0 /*Math.random() * 5 - 2.5*/}
           renderWord={(data) => (

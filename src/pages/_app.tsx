@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router"; // Pages Router version
+// import { useState, useEffect } from "react";
+// import { useRouter } from "next/router"; // Pages Router version
 import { Header } from "@/components/ui/header"; // Adjust path if needed (e.g., relative to pages/)
 import { AnimatePresence, motion } from "framer-motion"; // For transitions
 import "@/styles/globals.scss"; // Global styles from original layout.tsx (adjust path)
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
+import { AppProps } from "next/app";
 
 // Apply fonts (similar to original layout.tsx)
 export const geistSans = Geist({
@@ -16,25 +17,25 @@ export const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-function MyApp({ Component, pageProps, router }) {
-  const [isLoading, setIsLoading] = useState(false);
-  const nextRouter = useRouter();
+function MyApp({ Component, pageProps, router }: AppProps) {
+  // const [isLoading, setIsLoading] = useState(false);
+  // const nextRouter = useRouter();
 
-  // Handle route change events for loading (adapted from template.tsx)
-  useEffect(() => {
-    const handleStart = () => setIsLoading(true);
-    const handleComplete = () => setIsLoading(false);
-
-    nextRouter.events.on("routeChangeStart", handleStart);
-    nextRouter.events.on("routeChangeComplete", handleComplete);
-    nextRouter.events.on("routeChangeError", handleComplete);
-
-    return () => {
-      nextRouter.events.off("routeChangeStart", handleStart);
-      nextRouter.events.off("routeChangeComplete", handleComplete);
-      nextRouter.events.off("routeChangeError", handleComplete);
-    };
-  }, [nextRouter]);
+  // // Handle route change events for loading (adapted from template.tsx)
+  // useEffect(() => {
+  //   const handleStart = () => setIsLoading(true);
+  //   const handleComplete = () => setIsLoading(false);
+  //
+  //   nextRouter.events.on("routeChangeStart", handleStart);
+  //   nextRouter.events.on("routeChangeComplete", handleComplete);
+  //   nextRouter.events.on("routeChangeError", handleComplete);
+  //
+  //   return () => {
+  //     nextRouter.events.off("routeChangeStart", handleStart);
+  //     nextRouter.events.off("routeChangeComplete", handleComplete);
+  //     nextRouter.events.off("routeChangeError", handleComplete);
+  //   };
+  // }, [nextRouter]);
 
   return (
     <>
