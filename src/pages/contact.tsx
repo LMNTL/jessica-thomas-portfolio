@@ -3,7 +3,7 @@
 import { FormEvent, Ref, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "@/styles/contact.module.scss";
-import cx from "classnames";
+import clsx from "clsx";
 import Head from "next/head"; // Added for metadata
 
 export default function Contact() {
@@ -80,7 +80,7 @@ export default function Contact() {
               <div className={styles.inputGroup}>
                 <label
                   htmlFor="name"
-                  className={cx(styles.label, styles.required)}
+                  className={clsx(styles.label, styles.required)}
                 >
                   Name
                 </label>
@@ -96,7 +96,7 @@ export default function Contact() {
               <div className={styles.inputGroup}>
                 <label
                   htmlFor="contact"
-                  className={cx(styles.label, styles.required)}
+                  className={clsx(styles.label, styles.required)}
                 >
                   Contact info
                 </label>

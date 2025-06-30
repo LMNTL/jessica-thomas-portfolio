@@ -19,12 +19,12 @@ const skillList: Skill[] = [
   },
   { text: "React", value: 1000, color: "#58c4dc" },
   { text: "TypeScript", value: 1000, color: "#3178c6" },
-  { text: "PHP", value: 1000, color: "#4F5B93" },
-  { text: "Python", value: 1000, color: "#ffd343" },
+  { text: "PHP", value: 700, color: "#4F5B93" },
+  { text: "Python", value: 800, color: "#ffd343" },
   { text: "SQL", value: 1000, color: "#699eca" },
-  { text: "Django", value: 1000, color: "#44B78B" },
-  { text: "C#", value: 1000, color: "#ac99ea" },
-  { text: "Unity", value: 1000, color: "#455463" },
+  { text: "Django", value: 800, color: "#44B78B" },
+  { text: "C#", value: 600, color: "#ac99ea" },
+  { text: "Unity", value: 500, color: "#455463" },
 ];
 
 export default function Skills() {

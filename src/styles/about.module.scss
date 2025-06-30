@@ -1,0 +1,16 @@
+.container {
+  margin-inline: 2rem;
+}
+
+.photo {
+  float: right;
+  max-width: 40vw;
+  margin-left: 1rem;
+  clip-path: polygon(20% 0%, 0% 20%, 8% 49%, 0% 80%, 20% 100%, 50% 92%, 80% 100%, 100% 80%, 92% 50%, 100% 20%, 80% 0%, 52% 0);
+  filter: drop-shadow(10px 20px 20px white);
+}
+
+.inner p {
+  font-size: 1.125em;
+  margin-bottom: 1rem;
+}

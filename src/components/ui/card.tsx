@@ -3,10 +3,13 @@ import { ReactNode } from "react";
 
 interface CardProps {
   children: ReactNode;
+  title?: string;
+  innerClass?: string;
 }
 
-export const Card = ({ children }: CardProps) => (
+export const Card = ({ children, title, innerClass }: CardProps) => (
   <div className={styles.card}>
-    <div>{children}</div>
+    {title && <h2>{title}</h2>}
+    <div className={innerClass}>{children}</div>
   </div>
 );

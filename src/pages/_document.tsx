@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body>
-        <Main /> {/* Where _app.js content renders */}
+        <Main />
         <NextScript />
       </body>
     </Html>

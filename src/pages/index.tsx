@@ -12,6 +12,7 @@ export default function Home() {
         />
       </Head>
       <div className={styles.page}>
+        <h2 className={styles.heroText}>Jessica Santoro Thomas.</h2>
         <h2 className={styles.heroText}>Full stack developer.</h2>
         <h2 className={styles.heroText}>I ship code.</h2>
       </div>

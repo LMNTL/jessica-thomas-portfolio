@@ -95,6 +95,26 @@
   }
 }
 
+.source {
+  width: calc(100% - 4rem);
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: space-between;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.octocat {
+  color: white;
+  height: 0.725em;
+  width: 0.75em;
+  margin-right: 0.25em;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 1rem;

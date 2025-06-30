@@ -53,22 +53,20 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Head>
         <title>Portfolio</title>
       </Head>
-      <div>
-        {" "}
-        <Header />
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={router.route}
-            initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: 20 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ type: "spring", duration: 0.5 }}
-            style={{ width: "100%" }}
-          >
-            <Component {...pageProps} key={router.route} />{" "}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+
+      <Header />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={router.route}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 20 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ type: "spring", duration: 0.5 }}
+          style={{ width: "100%" }}
+        >
+          <Component {...pageProps} key={router.route} />{" "}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }

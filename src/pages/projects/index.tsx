@@ -1,4 +1,6 @@
 import styles from "@/styles/projects.module.scss";
+import clsx from "clsx";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -76,20 +78,24 @@ export default function Projects() {
           </a>
         </div>
 
-        <div className={styles.projectCard}>
-          <a
-            href="https://github.com/LMNTL/react-pdb-view"
-            className={styles.projectLink}
-          >
-            <div className={styles.projectInfo}>
-              <h3>React PDB View</h3>
-              <p>
-                A React component for visualizing protein structures from PDB
-                files. Built with modern React patterns and WebGL for
-                high-performance 3D molecular rendering in the browser.
-              </p>
+        <div className={clsx(styles.projectCard, styles.projectLink)}>
+          <div className={styles.projectInfo}>
+            <h3>React PDB View</h3>
+            <p>
+              A React component for visualizing protein structures from PDB
+              files. Built with modern React patterns and WebGL for
+              high-performance 3D molecular rendering in the browser.
+            </p>
+            <div className={styles.source}>
+              <Link href="https://lmntl.github.io/react-pdb-view/">
+                ▶️ Demo
+              </Link>
+              <Link href="https://github.com/LMNTL/react-pdb-view">
+                <img src="github-mark-white.svg" className={styles.octocat} />
+                Source
+              </Link>
             </div>
-          </a>
+          </div>
         </div>
 
         <div className={styles.projectCard}>
